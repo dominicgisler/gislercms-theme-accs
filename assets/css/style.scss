@@ -27,6 +27,9 @@ body {
 #cookie-info {
   position: fixed;
   bottom: 0;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 #header-carousel {
