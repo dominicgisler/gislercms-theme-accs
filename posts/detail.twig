@@ -1,0 +1,25 @@
+<div class="post">
+    {% if trans.getMetaImage()|length > 0 %}
+        <img class="mw-100" src="{{ trans.getMetaImage() }}">
+    {% endif %}
+    <h2 class="mt-2">{{ trans.getTitle() }}</h2>
+    {% if post.getPublishAt() > 0 %}
+        {% if trans.getLanguage().getLocale() == "en" %}
+            <small>Published on {{ post.getPublishAt()|date('d.m.Y') }} at {{ post.getPublishAt()|date('H:i') }} Uhr</small>
+        {% elseif trans.getLanguage().getLocale() == "fr" %}
+            <small>Publié le {{ post.getPublishAt()|date('d.m.Y') }} à {{ post.getPublishAt()|date('H:i') }} Uhr</small>
+        {% else %}
+            <small>Veröffentlicht am {{ post.getPublishAt()|date('d.m.Y') }} um {{ post.getPublishAt()|date('H:i') }} Uhr</small>
+        {% endif %}
+    {% endif %}
+    <div>
+        {{ trans.getContent()|raw }}
+        {% for attribute in post.attributes %}
+            {% if attribute.name == 'galerie' %}
+                {% for img in glob('../public/uploads/' ~ attribute.value ~ '/*.*') %}
+                    <img src="{{ base_url() }}/{{ img|replace({ '../public/': '' }) }}" style="width: 100px;">
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

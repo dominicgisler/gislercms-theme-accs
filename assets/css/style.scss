@@ -6,7 +6,7 @@ $fa-font-path: "../webfonts" !default;
 @import '../../vendor/fortawesome/font-awesome/scss/brands';
 
 body {
-  background: url('../img/bg.jpeg') no-repeat center center fixed;
+  background: url('../img/background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -27,4 +27,60 @@ body {
 #cookie-info {
   position: fixed;
   bottom: 0;
+}
+
+#header-carousel {
+  .carousel-item {
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 151px;
+
+    @media (max-width: 575px) {
+      height: 116px;
+    }
+  }
+
+  a.logo {
+    width: 350px;
+    height: 125px;
+    box-sizing: border-box;
+    display: block;
+    padding: 15px 25px 25px 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    text-align: center;
+    margin: -138px auto 13px auto;
+    max-width: 90%;
+
+    z-index: 1;
+    position: relative;
+
+    @media (max-width: 575px) {
+      margin-top: -103px;
+      width: 250px;
+      height: 90px;
+    }
+  }
+}
+
+footer {
+  p {
+    margin: 0;
+  }
+}
+
+nav {
+  @media (min-width: 992px) {
+    li.dropdown:hover > .dropdown-menu {
+      display: block;
+    }
+  }
+
+  .langswitch a {
+    text-decoration: none;
+  }
 }

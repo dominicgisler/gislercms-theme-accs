@@ -30,5 +30,21 @@
                 </li>
             {% endfor %}
         </ul>
+        <div class="text-right dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="languageSelection" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{{ base_url() }}/assets/img/lang/{{ page.getLanguage().getLocale() }}.jpg">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageSelection">
+                <a class="dropdown-item" href="{{ base_url() }}/de/{{ page.getName() }}">
+                    <img src="{{ base_url() }}/assets/img/lang/de.jpg" class="mr-2"> Deutsch
+                </a>
+                <a class="dropdown-item" href="{{ base_url() }}/en/{{ page.getName() }}">
+                    <img src="{{ base_url() }}/assets/img/lang/en.jpg" class="mr-2"> English
+                </a>
+                <a class="dropdown-item" href="{{ base_url() }}/fr/{{ page.getName() }}">
+                    <img src="{{ base_url() }}/assets/img/lang/fr.jpg" class="mr-2"> Français
+                </a>
+            </div>
+        </div>
     </div>
 </nav>

@@ -1,7 +1,13 @@
-<header class="border rounded bg-light text-center p-4 display-4">
-    <div class="row">
-        <a href="{{ base_url() }}" class="col-10 col-sm-8 col-lg-6 m-auto">
-            <img src="{{ base_url() }}/assets/img/logo.png" alt="Logo" class="mw-100">
-        </a>
+<header id="header-carousel" class="rounded carousel slide carousel-fade overflow-hidden" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active overflow-hidden" style="background-image: url('{{ base_url() }}/assets/img/header.jpg');">
+        </div>
+        {% for img in glob('../public/uploads/img/header/*.jpg') %}
+            <div class="carousel-item overflow-hidden" style="background-image: url('{{ base_url() }}/{{ img|replace({ '../public/': '' }) }}');">
+            </div>
+        {% endfor %}
     </div>
+    <a class="logo" href="{{ base_url() }}">
+        <img src="{{ base_url() }}/uploads/img/logo.png" alt="Logo" class="w-100">
+    </a>
 </header>
